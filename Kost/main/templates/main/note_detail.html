@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Title: {{ note.name }}</h1>
+
+<p><strong>Name:</strong> <a href="">{{ note.name }}</a></p>
+<p><strong>1st field:</strong> {{ note.main_field }}</p>
+<p><strong>2nd field:</strong> {{ note.add_field }}</p>
+<p><strong>Author field:</strong> {{ note.author }}</p>
+<p><strong>Date publish field:</strong> {{ note.publish_date }}</p>
+<p>number of notes {{ hello }} </p>
+<p>place of pk {{ place }} </p>
+<p>now pk {{ hell }} </p>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="submit" value="Submit" />
+</form>
+
+{% endblock %}

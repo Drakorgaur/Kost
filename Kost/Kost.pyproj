@@ -1,0 +1,188 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>Kost</Name>
+    <RootNamespace>Kost</RootNamespace>
+    <InterpreterId>Global|PythonCore|3.7</InterpreterId>
+    <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
+    <IsWindowsApplication>False</IsWindowsApplication>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d961069b-2cc7-4ff7-bcf8-e307a3a11d05</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>Kost.settings</DjangoSettingsModule>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'insecure' ">
+    <OutputPath>bin\insecure\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="chat\admin.py" />
+    <Compile Include="chat\apps.py" />
+    <Compile Include="chat\consumers.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="chat\migrations\__init__.py" />
+    <Compile Include="chat\models.py" />
+    <Compile Include="chat\routing.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="chat\tests.py" />
+    <Compile Include="chat\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="chat\views.py" />
+    <Compile Include="chat\__init__.py" />
+    <Compile Include="kost\asgi.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="main\admin.py" />
+    <Compile Include="main\apps.py" />
+    <Compile Include="main\migrations\__init__.py" />
+    <Compile Include="main\models.py" />
+    <Compile Include="main\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="main\multiple_forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="main\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="main\tests.py" />
+    <Compile Include="main\views.py" />
+    <Compile Include="main\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="kost\__init__.py" />
+    <Compile Include="kost\settings.py" />
+    <Compile Include="kost\urls.py" />
+    <Compile Include="kost\wsgi.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="chat\templates\chat\index.html" />
+    <Content Include="chat\templates\chat\room.html" />
+    <Content Include="libman.json" />
+    <Content Include="main\static\css\button.scss" />
+    <Content Include="main\static\css\styles.css" />
+    <Content Include="main\static\css\styles2.css" />
+    <Content Include="main\static\css\styles-reg.css" />
+    <Content Include="main\static\JS\Login2.js" />
+    <Content Include="main\templates\main\chat.html" />
+    <Content Include="main\templates\main\note_list.html" />
+    <Content Include="main\templates\main\base.html" />
+    <Content Include="main\templates\index.html" />
+    <Content Include="main\templates\base.html" />
+    <Content Include="main\templates\main\book_list.html" />
+    <Content Include="main\templates\main\note_detail.html" />
+    <Content Include="main\templates\main\adding_note.html" />
+    <Content Include="main\templates\main\post_edit.html" />
+    <Content Include="main\templates\main\profile.html" />
+    <Content Include="main\templates\main\profile_update.html" />
+    <Content Include="main\templates\main\register.html" />
+    <Content Include="main\templates\main\register_done.html" />
+    <Content Include="main\templates\main\question_detail.html" />
+    <Content Include="main\templates\main\token.html" />
+    <Content Include="main\templates\main\registertoken_list.html" />
+    <Content Include="main\templates\main\token_input.html" />
+    <Content Include="main\templates\main\login2.html" />
+    <Content Include="main\templates\main\notes.html" />
+    <Content Include="main\templates\main\edit_note.html" />
+    <Content Include="main\templates\registration\login.html" />
+    <Content Include="main\templates\registration\password_reset_form.html" />
+    <Content Include="main\templates\registration\password_reset_email.html" />
+    <Content Include="main\templates\registration\password_reset_done.html" />
+    <Content Include="main\templates\registration\password_reset_confirm.html" />
+    <Content Include="main\templates\registration\password_reset_complete.html" />
+    <Content Include="main\templates\registration\password_change_form.html" />
+    <Content Include="main\templates\registration\password_change_done.html" />
+    <Content Include="main\templates\404.html" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="chat\" />
+    <Folder Include="chat\migrations\" />
+    <Folder Include="chat\templates\" />
+    <Folder Include="chat\templates\chat\" />
+    <Folder Include="kost\" />
+    <Folder Include="main\" />
+    <Folder Include="main\migrations\" />
+    <Folder Include="main\static\" />
+    <Folder Include="main\static\css\" />
+    <Folder Include="main\static\JS\" />
+    <Folder Include="main\templates\" />
+    <Folder Include="main\templates\main\" />
+    <Folder Include="main\templates\registration\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.7</Version>
+      <Description>env (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.7" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

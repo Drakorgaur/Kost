@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>{% block title %} Login {% endblock %}</title>
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+    {% block style %} {% endblock %}
+</head>
+
+<body>
+   <div class="login-box">
+        <h1>Login</h1>
+
+        <h4>Please, use the following form to log-in:</h4>
+        <form action="." method="post">
+            <div class="user-box">
+                <div class="textarea">
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                </div>
+                {% if error %}<p>User does not exist</p> {% endif %}
+                <p>
+                <div class="button2">
+                    <input type="submit" class="button" value="Log-in">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </p>
+                <p  class="login"><a href="{% url "password_reset" %}">Forgotten your password?</a></p>
+            </div>
+        </form>
+        
+        
+        
+    </div>
+    
+{% block content %}
+{% endblock %}
+</body>
+</html>

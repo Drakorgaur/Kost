@@ -1,0 +1,122 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+
+html {
+    height: 100%;
+}
+
+body {
+    color: white;
+    margin: 0;
+    letter-spacing: 1px;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+    background: linear-gradient(#6a70a3, #6a70a3);
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    padding-top: 0;
+    margin-top: 0;
+    color: white;
+}
+    a:visited {
+        color: white;
+    }
+
+.widget {
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    z-index: 1;
+}
+
+ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 40px;
+    height: 100%;
+}
+    ul li {
+        list-style-type: none;
+        height: 122.5%;
+        display: inline-block;
+        position: relative;
+        opacity: 1;
+        padding-right: 10px;
+        margin-right: 10px;
+        background: #383c57;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+        ul li a {
+            padding: 0 0 0 10px;
+            margin: 10px 0 0 0;
+            font-size: 24px;
+        }
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 70%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+}
+
+.login-box {
+    width: 100%;
+    padding: 20px;
+    margin: 40px 0 0 0;
+    background: #383c57;
+    opacity: 1;
+    box-sizing: border-box;
+    box-shadow: 19px 19px 9px rgb(0 0 0 / 60%);
+    border-radius: 10px;
+    position: absolute;
+    z-index: 2;
+}
+
+.button {
+    width: 100%;
+    padding: 0 0 0 0;
+    margin: 10px 0 0 0;
+    border-radius: 4px;
+    height: 35px;
+    font-size: 16px;
+    background: #b52d5f;
+    border: 0;
+    color: #fff;
+    outline: transparent;
+    position: relative;
+}
+
+    .button:hover {
+        background: #de4e72;
+        color: white;
+    }
+
+.user-box .textarea input {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 0px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    background: transparent;
+}
+    .user-box .textarea input:focus {
+        color: red;
+        border-bottom: 2px solid red;
+    }
+
+    .user-box .textarea label {
+        font-size: 22px;
+    }

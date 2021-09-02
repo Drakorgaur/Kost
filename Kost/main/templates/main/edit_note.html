@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+{% if perms.note.can_add_note %}
+
+    <form action="" method="post">
+        <p>Edit Note</p>
+        {% csrf_token %}
+        <table>
+        {{ form }}
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+{% else %}
+    <h1>Seems like you have no permission to do this :(</h1>
+{% endif %}
+
+{% endblock %}

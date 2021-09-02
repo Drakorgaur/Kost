@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Index Page {% endblock %}
+
+{% block content %}
+    <h1>IndexPage</h1>
+    <p>Welcome</p>
+    <p>Amount of notes: {{ num_note }}</p>
+
+    {% if perms.note.can_view_note %}
+    <p>This is test</p>
+    {% endif %}
+{% endblock %}

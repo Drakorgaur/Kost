@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if is_paginated %}
+      <div class="pagination">
+          <span class="page-links">
+              {% if page_obj.has_previous %}
+                  <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+              {% endif %}
+              <span class="page-current">
+                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+              </span>
+              {% if page_obj.has_next %}
+                  <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+              {% endif %}
+          </span>
+      </div>
+  {% endif %}
+    <h1>Note List</h1>
+
+    {% if note_list %}
+    <ul>
+
+      {% for Note in note_list %}
+      <li class="note-list">
+          <ul class="note-ul">
+                <li class="name"><a class="note-link" href="{{ Note.get_absolute_url }}">{{ Note.name }}</a></li>
+                <li><p class="list-main-field"> Main Field: {{ Note.main_field }} </p></li>
+                <li><p class="list-add-field"> Additional Field: {{ Note.add_field }} </p></li>
+          </ul>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no notes there.</p>
+    {% endif %} 
+  {% if is_paginated %}
+      <div class="pagination">
+          <span class="page-links">
+              {% if page_obj.has_previous %}
+                  <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+              {% endif %}
+              <span class="page-current">
+                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+              </span>
+              {% if page_obj.has_next %}
+                  <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+              {% endif %}
+          </span>
+      </div>
+  {% endif %}
+{% endblock %}

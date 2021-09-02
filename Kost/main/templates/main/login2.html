@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>{% block title %} Login {% endblock %}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    {% load static %}
+    <script src="{% static '/JS/Login2.js' %}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+    {% block style %} {% endblock %}
+</head>
+
+<body>
+    <div class="main">
+        <div class="widget">
+            <ul>
+                <li id="login"><a href="#" >Login</a></li>
+                <li id="register"><a href="#">Register</a></li>
+            </ul>
+        </div>
+
+        <div class="login-box">
+            <div class="user-box" name="login">
+                <h1>Login</h1>
+
+                <h4>Please, use the following form to log-in:</h4>
+                <form action="" method="post">
+                    <div class="textarea">
+                        {% csrf_token %}
+                        {{ login_form.as_p }}
+                    </div>
+                    <input type="submit" value="Submit" class="button" name="btnform1" />
+                    
+                </form>
+            </div>
+            <div class="user-box" name="register" hidden="hidden">
+
+                <h4>Please, use the following form to create an account:</h4>
+                <form action="" method="post">
+                    <div class="textarea">
+                        <p>Register</p>
+                        {% csrf_token %}
+                        {{ user_form }}
+                    </div>
+                    <input type="submit" value="Submit" class="button" name="btnform2" />
+                    
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

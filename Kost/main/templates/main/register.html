@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>
+{% block title %}Create an account{% endblock %}</title>
+
+{% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles-reg.css' %}">
+</head>
+
+<body>
+    <div class = "register">
+        <h2>Create an account</h2>
+        <form action="." method="post">
+            
+            <div class="user-box">
+            {{ user_form.as_p }}
+            {% csrf_token %}
+            <p><input type="submit" value="Create my account"></p>
+            </div>
+        </form>
+    </div>
+    <div>
+        <ul>
+            <li><a href="{% url 'token-input' %}">Registration with token</a></li>
+        </ul>
+    </div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

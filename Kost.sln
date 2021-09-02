@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Kost", "Kost\Kost.pyproj", "{D961069B-2CC7-4FF7-BCF8-E307A3A11D05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		insecure|Any CPU = insecure|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D961069B-2CC7-4FF7-BCF8-E307A3A11D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D961069B-2CC7-4FF7-BCF8-E307A3A11D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D961069B-2CC7-4FF7-BCF8-E307A3A11D05}.insecure|Any CPU.ActiveCfg = insecure|Any CPU
+		{D961069B-2CC7-4FF7-BCF8-E307A3A11D05}.insecure|Any CPU.Build.0 = insecure|Any CPU
+		{D961069B-2CC7-4FF7-BCF8-E307A3A11D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D961069B-2CC7-4FF7-BCF8-E307A3A11D05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19A07984-8D0C-4254-A799-8071C65D49C9}
+	EndGlobalSection
+EndGlobal
