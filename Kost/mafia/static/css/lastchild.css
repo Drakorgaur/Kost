@@ -1,0 +1,12 @@
+.players-list > li:nth-last-child(2) {
+    padding: 0 10px 0 34.1%;
+    color: red !important;
+}
+
+.div-players-list {
+    color: red !important;
+}
+
+.court-list > li:nth-last-child(1) p {
+    padding: 5px 0 0 7px;
+}

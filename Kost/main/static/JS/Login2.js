@@ -1,5 +1,3 @@
-//alert("Hello, Welcome to Javatpoint");
-//#505680
 $(document).ready(function () {
     $("#register").css("background-color", "#505680");
     $("#register").click(function () {

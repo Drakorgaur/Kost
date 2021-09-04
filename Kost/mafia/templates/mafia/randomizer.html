@@ -1,0 +1,15 @@
+{% extends 'mafia/base.html' %}
+
+{% block title %} Role Random {% endblock %}
+
+{% block content %}
+    
+    <form action="" method="post">
+        <p>Choose number of players</p>
+        {% csrf_token %}
+        <table>
+        {{ form }}
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}

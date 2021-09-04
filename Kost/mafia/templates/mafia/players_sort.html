@@ -1,0 +1,87 @@
+﻿{% extends 'mafia/base.html' %}
+
+{% block title %} Role Random {% endblock %}
+
+{% load static %}
+{% block style %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="{% static '/JS/mafia.js' %}" type="text/javascript"></script>
+{% if check %}
+<link rel="stylesheet" href="{% static 'css/lastchild.css' %}">
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<p>Room name: {{ room_name }}</p>
+<div id="shufle">
+    <table>
+        <tr>
+            {% for players in players_list %}
+            <td>{{ players }}</td>
+            {% endfor %}
+        </tr>
+
+        <tr>
+            {% for players in players_list %}
+            <td> 🠗 </td>
+            {% endfor %}
+        </tr>
+
+        <tr>
+            {% for position in positions %}
+            <td>{{ position }}</td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+
+    {% if check %}
+<p>11 players</p>
+    {% else %}
+<p>9 players</p>
+    {% endif %}
+<div class="div-players-list">
+    <ul class="players-list">
+        {% for position in positions %}
+        <li>
+            <div class="player" id="player_{{ position }}">
+                <p>player #{{ position }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<p></p>
+<div class="div-elements">
+    <ul class="elements">
+        <li style="width:45%">
+            <div class="notes"></div>
+        </li>
+
+        <li style="width:45%">
+            <div class="sub-elements">
+                <ul class="sub-ul">
+                    <li style="width:100%">
+                        <div class="court">
+                            <ul class="court-list">
+                                {% for position in positions %}
+                                <li>
+                                    <div class="court-player" id="player_{{ position }}">
+                                        <p>{{ position }}</p>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+
+                        </div>
+                    </li>
+                    <li style="width: 100%; padding: 100px 0 0 0">
+                        <div class="timer"></div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+{% endblock %}
