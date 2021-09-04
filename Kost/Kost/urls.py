@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', include('main.urls')),
     path('chat/', include('chat.urls')),
+    path('mafia/', include('mafia.urls')),
     path('', RedirectView.as_view(url='/index/', permanent=True)),
     #url(r'^account/', include('main.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

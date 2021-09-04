@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
     # Add your apps here to enable them
+    'mafia',
     'channels',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,8 +123,13 @@ CHANNEL_LAYERS = {
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'mafia/static/'),
+    os.path.join(BASE_DIR, 'main/static/'),
+]
+
 STATIC_URL = '/static/'
-STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
 LOGIN_REDIRECT_URL = 'index'
 

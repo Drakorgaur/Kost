@@ -54,6 +54,19 @@
     <Compile Include="kost\asgi.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="mafia\admin.py" />
+    <Compile Include="mafia\apps.py" />
+    <Compile Include="mafia\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mafia\migrations\__init__.py" />
+    <Compile Include="mafia\models.py" />
+    <Compile Include="mafia\tests.py" />
+    <Compile Include="mafia\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mafia\views.py" />
+    <Compile Include="mafia\__init__.py" />
     <Compile Include="main\admin.py" />
     <Compile Include="main\apps.py" />
     <Compile Include="main\migrations\__init__.py" />
@@ -80,6 +93,13 @@
     <Content Include="chat\templates\chat\index.html" />
     <Content Include="chat\templates\chat\room.html" />
     <Content Include="libman.json" />
+    <Content Include="mafia\static\css\lastchild.css" />
+    <Content Include="mafia\static\css\mafia.css" />
+    <Content Include="mafia\static\JS\mafia.js" />
+    <Content Include="mafia\templates\mafia\base.html" />
+    <Content Include="mafia\templates\mafia\index.html" />
+    <Content Include="mafia\templates\mafia\players_sort.html" />
+    <Content Include="mafia\templates\mafia\randomizer.html" />
     <Content Include="main\static\css\button.scss" />
     <Content Include="main\static\css\styles.css" />
     <Content Include="main\static\css\styles2.css" />
@@ -122,6 +142,13 @@
     <Folder Include="chat\templates\" />
     <Folder Include="chat\templates\chat\" />
     <Folder Include="kost\" />
+    <Folder Include="mafia\" />
+    <Folder Include="mafia\migrations\" />
+    <Folder Include="mafia\static\" />
+    <Folder Include="mafia\static\css\" />
+    <Folder Include="mafia\static\JS\" />
+    <Folder Include="mafia\templates\" />
+    <Folder Include="mafia\templates\mafia\" />
     <Folder Include="main\" />
     <Folder Include="main\migrations\" />
     <Folder Include="main\static\" />
