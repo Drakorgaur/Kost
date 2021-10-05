@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if is_paginated %}
+      <div class="pagination">
+          <span class="page-links">
+              {% if page_obj.has_previous %}
+                  <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+              {% endif %}
+              <span class="page-current">
+                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+              </span>
+              {% if page_obj.has_next %}
+                  <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+              {% endif %}
+          </span>
+      </div>
+  {% endif %}
+    <h1>Users</h1>
+
+    {% if user_list %}
+    <form>
+        {{ form }}
+        <input type="submit" value="Submit" class="button" name="filter" />
+    </form>
+    <ul>
+
+        {% for User in user_list %}
+        <li class="user-list">
+            <ul class="user-ul">
+                <li class="name">
+
+                    <form>
+                        <a class="user-link" href="{{ User.get_absolute_url }}">
+                            <input type="hidden" name="username" required id="id_filter" value="{{ User.username }}" readonly>
+                        </a>
+                        <p id="first_name">First name: {{ User.first_name }}</p>
+                        <p id="last_name">Last name: {{ User.last_name }}</p> 
+                        <input type="submit" value="Delete" class="button" name="delete" />
+</form>
+                </li>
+
+            </ul>
+        </li>
+        {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no users there.</p>
+    {% endif %} 
+  {% if is_paginated %}
+      <div class="pagination">
+          <span class="page-links">
+              {% if page_obj.has_previous %}
+                  <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+              {% endif %}
+              <span class="page-current">
+                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+              </span>
+              {% if page_obj.has_next %}
+                  <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+              {% endif %}
+          </span>
+      </div>
+  {% endif %}
+{% endblock %}

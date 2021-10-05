@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <ul>
+            <li><a class="light" href="{% url 'index' %}">Index</a></li>
+            <li><p>Notes</p></li>
+            <li><a class="light" href="{% url 'post_new' %}">Add new post</a></li>
+            <li><a class="light" href="{% url 'notes' %}">All notes</a></li>
+            <li><p>Profiles</p></li>
+            <li><a class="light" href="{% url 'profile-update' %}">Profile update</a></li>
+            <li><a class="light" href="{% url 'users' %}">Users</a></li>
+            <li><p>Token</p></li>
+            <li><a class="light" href="{% url 'reg-tokens' %}">All tokens</a></li>
+            <li><a class="light" href="{% url 'reg-token-create' %}">Create token</a></li>
+            <li><a class="light" href="{% url 'reg-token-check' %}">Check token</a></li>
+        </ul>
+
+{% endblock %}

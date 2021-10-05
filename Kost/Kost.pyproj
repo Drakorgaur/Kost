@@ -6,6 +6,7 @@
     <InterpreterId>Global|PythonCore|3.7</InterpreterId>
     <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
     <IsWindowsApplication>False</IsWindowsApplication>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -19,9 +20,11 @@
     <WorkingDirectory>.</WorkingDirectory>
     <LaunchProvider>Django launcher</LaunchProvider>
     <DjangoSettingsModule>Kost.settings</DjangoSettingsModule>
-    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <WebBrowserUrl>http://localhost:8000</WebBrowserUrl>
     <OutputPath>.</OutputPath>
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <PythonRunWebServerCommandType />
+    <PythonDebugWebServerCommandType />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,6 +38,20 @@
     <OutputPath>bin\insecure\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="api\admin.py" />
+    <Compile Include="api\apps.py" />
+    <Compile Include="api\migrations\__init__.py" />
+    <Compile Include="api\models.py" />
+    <Compile Include="api\permissions.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="api\serializers.py" />
+    <Compile Include="api\tests.py" />
+    <Compile Include="api\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="api\views.py" />
+    <Compile Include="api\__init__.py" />
     <Compile Include="chat\admin.py" />
     <Compile Include="chat\apps.py" />
     <Compile Include="chat\consumers.py">
@@ -74,9 +91,6 @@
     <Compile Include="main\forms.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="main\multiple_forms.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="main\urls.py">
       <SubType>Code</SubType>
     </Compile>
@@ -90,6 +104,7 @@
     <Compile Include="kost\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="api\templates\api\index.html" />
     <Content Include="chat\templates\chat\index.html" />
     <Content Include="chat\templates\chat\room.html" />
     <Content Include="libman.json" />
@@ -104,10 +119,13 @@
     <Content Include="main\static\css\styles.css" />
     <Content Include="main\static\css\styles2.css" />
     <Content Include="main\static\css\styles-reg.css" />
+    <Content Include="main\static\img\google.svg" />
+    <Content Include="main\static\JS\viza.js" />
     <Content Include="main\static\JS\Login2.js" />
+    <Content Include="main\templates\Login2Base.html" />
     <Content Include="main\templates\main\chat.html" />
+    <Content Include="main\templates\main\navigation.html" />
     <Content Include="main\templates\main\note_list.html" />
-    <Content Include="main\templates\main\base.html" />
     <Content Include="main\templates\index.html" />
     <Content Include="main\templates\base.html" />
     <Content Include="main\templates\main\book_list.html" />
@@ -125,6 +143,9 @@
     <Content Include="main\templates\main\login2.html" />
     <Content Include="main\templates\main\notes.html" />
     <Content Include="main\templates\main\edit_note.html" />
+    <Content Include="main\templates\auth\user_list.html" />
+    <Content Include="main\templates\main\viza.html" />
+    <Content Include="main\templates\main\scsflTokenRegister.html" />
     <Content Include="main\templates\registration\login.html" />
     <Content Include="main\templates\registration\password_reset_form.html" />
     <Content Include="main\templates\registration\password_reset_email.html" />
@@ -137,6 +158,10 @@
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="api\" />
+    <Folder Include="api\migrations\" />
+    <Folder Include="api\templates\" />
+    <Folder Include="api\templates\api\" />
     <Folder Include="chat\" />
     <Folder Include="chat\migrations\" />
     <Folder Include="chat\templates\" />
@@ -154,8 +179,10 @@
     <Folder Include="main\static\" />
     <Folder Include="main\static\css\" />
     <Folder Include="main\static\JS\" />
+    <Folder Include="main\static\img\" />
     <Folder Include="main\templates\" />
     <Folder Include="main\templates\main\" />
+    <Folder Include="main\templates\auth\" />
     <Folder Include="main\templates\registration\" />
   </ItemGroup>
   <ItemGroup>

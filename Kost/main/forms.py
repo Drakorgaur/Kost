@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Note
+from .models import Note, Test
 
 class NoteForm(forms.ModelForm):
 
@@ -8,6 +8,11 @@ class NoteForm(forms.ModelForm):
         model = Note
         fields = ('name','main_field','add_field')
 
+class TestForm(forms.ModelForm):
+
+    class Meta:
+        model = Test
+        fields = ('field',)
 
 from django.contrib.auth.models import User
 
@@ -38,12 +43,19 @@ class ProfileForm(forms.Form):
         model = User
 
 from .models import RegisterToken
+
+
+ROLE=[('Admin','Create admin user'),
+        ('User','Create default user'),
+        ('Mafia','Create Mafia user')]
 class RegisterTokenForm(forms.Form):
+    role = forms.ChoiceField(choices=ROLE, widget=forms.RadioSelect)
     class Meta:
         model = RegisterToken
 
 class TokenInputForm(forms.Form):
     token = forms.CharField()
+    email = forms.EmailField()
 
 class FilterForm(forms.Form):
     filter = forms.CharField()

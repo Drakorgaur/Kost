@@ -1,4 +1,5 @@
-{% extends "base.html" %}
+{% extends "Login2Base.html" %}
+{% block title %} Token Registration {% endblock %}
 {% block content %}
 
     <form action="" method="post">
@@ -7,6 +8,7 @@
         <table>
         {{ form }}
         </table>
+        <p> {{ exec }} </p>
         <input type="submit" value="Submit">
     </form>
 

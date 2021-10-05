@@ -2,9 +2,10 @@ from django.db import models
 from django.urls import reverse
 
 class Note(models.Model):
-    name = models.CharField(max_length=200, help_text="Model Representaion Name", default = 'Name_')
-    main_field = models.CharField(max_length=200, help_text="Help Text1 by Mark", default = 'main_name_')
-    add_field = models.CharField(max_length=200, help_text="Help Text2 by Mark", default = 'additional_name_')
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=200, help_text="Name")
+    main_field = models.CharField(max_length=200, help_text="Main text")
+    add_field = models.CharField(max_length=200)
     author = models.CharField(max_length=50)
     publish_date = models.DateField(null=True)
 
@@ -31,7 +32,22 @@ class CurrentNote(models.Model):
 
     
 class RegisterToken(models.Model):
+    id = models.AutoField(primary_key=True)
     token = models.CharField(max_length=6)
 
     def __str__(self):
         return self.token
+
+class User(models.Model):
+    id = models.AutoField(primary_key=True)
+
+    class Meta:
+        permissions = [
+            ("user_delete", "Can delete users | by Mark"),
+        ]
+
+class Test(models.Model):
+    id = models.AutoField(primary_key=True)
+    field = models.CharField(max_length=6)
+
+
