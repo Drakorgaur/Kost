@@ -20,10 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1d7ba2ad-5534-4af9-b288-860b00f56cf2'
+# SECRET_KEY = '1d7ba2ad-5534-4af9-b288-860b00f56cf2'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '1d7ba2ad-5534-4af9-b288-860b00f56cf2')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True    
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -162,7 +163,7 @@ REST_FRAMEWORK = {
 }
 
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/index'
+LOGOUT_REDIRECT_URL = '/index'
 
 STATIC_URL = '/static/'
