@@ -10,3 +10,6 @@ STYLE_CHOICES = sorted([(item, item) for item in get_all_styles()])
 
 class Snippet(models.Model):
     title = models.CharField(max_length=100)
+
+class Shedule(models.Model):
+    text = models.TextField()

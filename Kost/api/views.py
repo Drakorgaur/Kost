@@ -11,8 +11,8 @@ from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from rest_framework import status
 #api
-from api.models import Snippet
-from api.serializers import SnippetSerializer, UserSerializer
+from api.models import Snippet, Shedule
+from api.serializers import SnippetSerializer, UserSerializer, SheduleSerializer
 from api.permissions import IsAdmin
 #models+
 
@@ -112,4 +112,51 @@ class UserAPI():
         def delete(self, request, username_, format=None):
             user = self.get_object(username_)
             user.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class TelebotAPI():
+    class TeleboList(APIView):
+        permission_classes = [permissions.IsAuthenticatedOrReadOnly,
+                      IsAdmin]
+
+        def get(self, request, format=None):
+            shedules = Shedule.objects.all()
+            serializer = SheduleSerializer(shedules, many=True)
+            return Response(serializer.data)
+
+        def post(self, request, format=None):
+            serializer = SheduleSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+    class TelebotDetail(APIView):
+        permission_classes = [permissions.IsAuthenticatedOrReadOnly,
+                      IsAdmin]
+
+        def get_object(self, pk):
+            try:
+                return Shedule.objects.get(pk=pk)
+            except Shedule.DoesNotExist:
+                pass
+
+        def get(self, request, pk, format=None):
+            shedule = self.get_object(pk)
+            serializer = SheduleSerializer(shedule)
+            return Response(serializer.data)
+
+        def put(self, request, username_, format=None):
+            shedule = self.get_object(pk)
+            serializer = SheduleSerializer(shedule, data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        def delete(self, request, username_, format=None):
+            shedule = self.get_object(pk)
+            shedule.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)

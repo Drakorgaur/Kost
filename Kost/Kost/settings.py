@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'main.apps.mainConfig',
     'api.apps.apiConfig',
     'chat',
+    'corsheaders',
     'django.contrib.sites',
     'django.contrib.admin',
     'allauth',
@@ -60,7 +61,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = (
+  'http://localhost:8000',
+  'https://www.kubosh.net'
+)
 
 ROOT_URLCONF = 'Kost.urls'
 

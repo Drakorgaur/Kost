@@ -12,6 +12,11 @@ urlpatterns += [
     path('users/', views.UserAPI.UserList.as_view()),
     path('user/<str:username_>/', views.UserAPI.UserDetail.as_view()),
     ]
+#   Telebot
+urlpatterns += [
+    path('shedules/', views.TelebotAPI.TeleboList.as_view()),
+    path('shedule/<int:pk>/', views.TelebotAPI.TelebotDetail.as_view()),
+    ]
 #AUTH
 urlpatterns += [
     path('api-auth/', include('rest_framework.urls')),
