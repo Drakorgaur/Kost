@@ -117,8 +117,6 @@ class UserAPI():
 
 class TelebotAPI():
     class TeleboList(APIView):
-        permission_classes = [permissions.IsAuthenticatedOrReadOnly,
-                      IsAdmin]
 
         def get(self, request, format=None):
             shedules = Shedule.objects.all()
@@ -134,9 +132,6 @@ class TelebotAPI():
 
 
     class TelebotDetail(APIView):
-        permission_classes = [permissions.IsAuthenticatedOrReadOnly,
-                      IsAdmin]
-
         def get_object(self, pk):
             try:
                 return Shedule.objects.get(pk=pk)
@@ -148,7 +143,7 @@ class TelebotAPI():
             serializer = SheduleSerializer(shedule)
             return Response(serializer.data)
 
-        def put(self, request, username_, format=None):
+        def put(self, request, pk, format=None):
             shedule = self.get_object(pk)
             serializer = SheduleSerializer(shedule, data=request.data)
             if serializer.is_valid():
@@ -156,7 +151,7 @@ class TelebotAPI():
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        def delete(self, request, username_, format=None):
+        def delete(self, request, pk, format=None):
             shedule = self.get_object(pk)
             shedule.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
