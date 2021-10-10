@@ -9,7 +9,7 @@ class SnippetSerializer(serializers.ModelSerializer):
         
 class SheduleSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Snippet
+        model = Shedule
         fields = ['text',]
 
 class UserSerializer(serializers.ModelSerializer):
