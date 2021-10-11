@@ -72,6 +72,14 @@ CORS_ORIGIN_WHITELIST = (
   'https://www.kubosh.net'
 )
 
+CORS_ALLOWED_ORIGINS = [
+    "https://kubosh.net",
+    "https://google.com",
+    "http://localhost:8080",
+    "http://127.0.0.1:8000",
+]
+
+
 ROOT_URLCONF = 'Kost.urls'
 
 # Template configuration
